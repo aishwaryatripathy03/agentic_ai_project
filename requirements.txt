@@ -1,0 +1,10 @@
+streamlit
+groq
+langgraph
+langchain
+chromadb
+sentence-transformers
+numpy
+pandas
+tqdm
+typing-extensions
