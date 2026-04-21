@@ -1,13 +1,13 @@
-# ⚛️ PhysicsBot — Study Buddy (Agentic AI Project)
+# PhysicsBot — Study Buddy (Agentic AI Project)
 
-## 📌 Overview
+## Overview
 
 **PhysicsBot — Study Buddy** is an intelligent AI assistant designed for B.Tech students to learn and revise physics concepts.
 It uses an **Agentic AI architecture** with Retrieval-Augmented Generation (RAG), memory, tool usage, and self-evaluation to provide **accurate, context-aware, and non-hallucinated answers**.
 
 ---
 
-## 🎯 Objective
+## Objective
 
 * Provide clear explanations of physics concepts
 * Solve basic numerical problems
@@ -16,18 +16,18 @@ It uses an **Agentic AI architecture** with Retrieval-Augmented Generation (RAG)
 
 ---
 
-## 🧠 Key Features
+## Key Features
 
-* 📚 **RAG (Retrieval-Augmented Generation)** using vector database
-* 🧠 **Memory Support** using `thread_id`
-* 🔀 **Smart Routing** (retrieve / tool / memory)
-* 🧮 **Calculator Tool** for numericals
-* 📊 **Self-Evaluation Node** (faithfulness scoring)
-* 💬 **Interactive Chat UI** using Streamlit
+* **RAG (Retrieval-Augmented Generation)** using vector database
+* **Memory Support** using `thread_id`
+* **Smart Routing** (retrieve / tool / memory)
+* **Calculator Tool** for numericals
+* **Self-Evaluation Node** (faithfulness scoring)
+* **Interactive Chat UI** using Streamlit
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 User (Streamlit UI)
@@ -55,7 +55,7 @@ retrieve   tool     skip
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 * **Frontend:** Streamlit
 * **Agent Framework:** LangGraph
@@ -66,10 +66,10 @@ retrieve   tool     skip
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
-📁 project/
+project/
 │
 ├── agent.py                # Core agent logic (nodes, graph, LLM)
 ├── capstone_streamlit.py  # Streamlit UI
@@ -79,28 +79,28 @@ retrieve   tool     skip
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
-### 1️⃣ Clone the repository
+### 1. Clone the repository
 
 ```bash
 git clone <your-repo-url>
 cd project
 ```
 
-### 2️⃣ Install dependencies
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Install Groq SDK
+### 3. Install Groq SDK
 
 ```bash
 pip install groq
 ```
 
-### 4️⃣ Set API Key
+### 4. Set API Key
 
 #### Windows:
 
@@ -116,7 +116,7 @@ export GROQ_API_KEY="your_api_key_here"
 
 ---
 
-## ▶️ Run the Application
+## Run the Application
 
 ```bash
 python -m streamlit run capstone_streamlit.py
@@ -130,7 +130,7 @@ http://localhost:8501
 
 ---
 
-## 🧪 Sample Questions
+## Sample Questions
 
 * What is Newton’s Second Law?
 * Explain Simple Harmonic Motion
@@ -140,7 +140,7 @@ http://localhost:8501
 
 ---
 
-## 📊 Evaluation
+## Evaluation
 
 The system evaluates responses using:
 
@@ -150,7 +150,7 @@ The system evaluates responses using:
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 * Covers only **B.Tech Physics (basic topics)**
 * Does not provide advanced derivations
@@ -158,7 +158,7 @@ The system evaluates responses using:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 * Add more physics topics
 * Support advanced numerical solving
@@ -167,7 +167,7 @@ The system evaluates responses using:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Aishwarya Tripathy**
 B.Tech Student — Agentic AI Capstone Project
