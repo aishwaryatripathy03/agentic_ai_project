@@ -14,9 +14,7 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 from langgraph.graph import StateGraph, END
 
-# ─────────────────────────────────────────────
 # 1. KNOWLEDGE BASE — 10 Physics Documents
-# ─────────────────────────────────────────────
 documents = [
     {
         "id": "doc_001",
@@ -176,10 +174,7 @@ documents = [
     },
 ]
 
-
-# ─────────────────────────────────────────────
 # 2. CHROMADB SETUP
-# ─────────────────────────────────────────────
 def setup_chromadb():
     model = SentenceTransformer("all-MiniLM-L6-v2")
     client = chromadb.Client()
@@ -199,10 +194,7 @@ def setup_chromadb():
     )
     return collection, model
 
-
-# ─────────────────────────────────────────────
 # 3. STATE
-# ─────────────────────────────────────────────
 class CapstoneState(TypedDict):
     question: str
     messages: List[str]
@@ -215,10 +207,7 @@ class CapstoneState(TypedDict):
     eval_retries: int
     user_name: str
 
-
-# ─────────────────────────────────────────────
 # 4. TOOLS
-# ─────────────────────────────────────────────
 def calculator_tool(expression: str) -> str:
     try:
         allowed = {k: v for k, v in math.__dict__.items() if not k.startswith("__")}
@@ -237,10 +226,7 @@ def datetime_tool() -> str:
     except Exception as e:
         return f"Error: {str(e)}"
 
-
-# ─────────────────────────────────────────────
 # 5. LLM (Groq)
-# ─────────────────────────────────────────────
 import os
 from groq import Groq
 
@@ -274,10 +260,7 @@ def call_llm(prompt: str, system: str = "") -> str:
     except Exception as e:
         return f"LLM Error: {str(e)}"
 
-
-# ─────────────────────────────────────────────
 # 6. NODES
-# ─────────────────────────────────────────────
 _collection = None
 _embed_model = None
 
@@ -418,10 +401,7 @@ def retry_node(state: CapstoneState) -> CapstoneState:
     state = retrieval_node(state)
     return answer_node(state)
 
-
-# ─────────────────────────────────────────────
 # 7. GRAPH
-# ─────────────────────────────────────────────
 def route_decision(state): return state.get("route", "skip")
 def eval_decision(state):
     return "retry" if state.get("faithfulness", 1.0) < 0.5 and state.get("eval_retries", 0) < 2 else "save"
